@@ -1,0 +1,89 @@
+:root {
+  --background_grey: #f0eef1;
+  --background_white: #fffbfb;
+}
+
+body {
+  background-color: var(--background_grey);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background_white);
+  padding: 5px;
+}
+
+.navbar button {
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  border-color: transparent;
+}
+
+#bookModal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.5s ease-in-out;
+}
+
+#bookModal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#shadow {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  transition: 0.5s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#shadow.active {
+  display: block;
+}
+
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  gap: 1vh;
+}
+
+#bookGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2vw;
+  padding: 10px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  gap: 1vh;
+  box-shadow: rgb(0 0 0 / 16%) 5px 5px 10px;
+  background-color: var(--background_white);
+  border-radius: 10px;
+}
+
+.book-card-item {
+  text-align: center;
+  color: black;
+}
+
+.btn {
+  padding: 10px 0;
+  border-radius: 8px;
+  border-color: transparent;
+  font-size: 20px;
+}
